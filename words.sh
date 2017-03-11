@@ -4,7 +4,7 @@
 # speak the words
 while true
 do
-    words=$(python words.py)
+    words=$(python words.py | tee -a story.log)
     clear
     echo; echo; echo
     echo ${words} |

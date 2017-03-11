@@ -16,7 +16,8 @@ things = [
     "kitten", "dodecahedron", "picture", "waterfall", "socks" ]
 
 def choose(words):
-    return words[int(random.random() * len(words))]
+    i = random.randint(1, len(words)) - 1
+    return words[i]
 
 person = choose(people)
 action = choose(actions)
@@ -24,9 +25,9 @@ join = choose(joining)
 description = choose(descriptions)
 thing = choose(things)
 
-if random.random() > 0.5:
+if random.random() > 0.667:
     description += " " + choose(descriptions)
-else:
+elif random.random() > 0.5:
     description = "very " + description
 
 print "{} {} {} {} {}".format(person, action, join, description, thing)
