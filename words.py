@@ -32,5 +32,7 @@ action = choose(actions)
 
 if random.random() > 0.5:
     description += " " + choose(descriptions)
+else:
+    description = "very " + description
 
 print "{} {} {} {} {}".format(person, action, join, description, thing)
