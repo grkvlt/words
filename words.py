@@ -1,5 +1,4 @@
 # copyright 2017 by andrew donald kennedy
-# from an idea by dr aled sage, vp engineering, cloudsoft
 
 import random
 
