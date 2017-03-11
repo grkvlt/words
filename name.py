@@ -1,5 +1,3 @@
-# copyright 2017 by andrew donald kennedy
-
 import random
 
 sounds = [
