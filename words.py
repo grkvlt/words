@@ -24,14 +24,10 @@ actions = [
 def choose(words):
     return words[int(random.random() * len(words))]
 
-def main():
-    person = choose(people)
-    thing = choose(things)
-    join = choose(joining)
-    description = choose(descriptions)
-    action = choose(actions)
+person = choose(people)
+thing = choose(things)
+join = choose(joining)
+description = choose(descriptions)
+action = choose(actions)
 
-    print "{} {} {} {} {}".format(person, action, join, description, thing)
-
-if __name__ == "__main__":
-    main()
+print "{} {} {} {} {}".format(person, action, join, description, thing)
