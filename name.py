@@ -3,15 +3,16 @@
 import random
 
 sounds = [
-    "zaa", "goo", "fon", "min", "qua", "zok", "ble", "gon", "moo",
-    "gum", "plo", "gip", "dra", "foo", "bin", "zip", "cot", "laa" ]
+    "zaa", "goo", "fon", "min", "qua", "zok", "ble", "gon", "moo", "kip",
+    "gum", "plo", "gip", "dra", "foo", "bin", "zip", "cot", "laa", "arr" ]
 
 def choose(words):
     return words[int(random.random() * len(words))]
 
-one = choose(sounds)
-two = choose(sounds)
-three = choose(sounds)
-four = choose(sounds)
+def name(n):
+    name = ""
+    for i in range(n):
+        name += choose(sounds)
+    return name
 
-print "{}{}{}{}".format(one, two, three, four)
+print name(5)
