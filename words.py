@@ -8,11 +8,14 @@ things = [ "biscuit", "tree", "pencil sharpener", "marmalade", "toast", "fish ta
 descriptions = [ "green", "smelly", "tall", "red", "hollow", "musical", "sleepy" ]
 actions = [ "ate", "moved", "threw", "copied", "lifted", "found", "missed" ]
 
+def word(words):
+    return words[int(random.random() * len(words))]
+
 def main():
-    person = people[int(random.random() * len(people))]
-    thing = things[int(random.random() * len(things))]
-    description = descriptions[int(random.random() * len(descriptions))]
-    action = actions[int(random.random() * len(actions))]
+    person = word(people)
+    thing = word(things)
+    description = word(descriptions)
+    action = word(actions)
 
     print "{} {} the {} {}".format(person, action, description, thing)
 
