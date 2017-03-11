@@ -1,6 +1,5 @@
 # copyright 2017 by andrew donald kennedy
 
-import sys
 import random
 
 sounds = [
