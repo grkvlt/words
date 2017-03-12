@@ -10,16 +10,22 @@ Designed for teaching young children about programming.
 # Getting Started
 
     % python words.py
-    Biggles listened to a exploding red marmalade
+    Biggles listened to the exploding red marmalade
     % python name.py
     gongoogipquazip
 
 On OSX with FIGlet installed, try runing `words.sh` to display
-the sentences and speak them with the speech syntesiser at the
-same time, forever, or until you get bored...
+the sentences as a story, and speak them with the speech synthesiser
+at the same time, forever, or until you get bored. The `story.log`
+contains all generated sentences and is appended to by the script.
 
-Have fun!
+Similarly, `name.sh` provides a _Flash Card_ experience to show
+what learning a language feels like to most people.
+
+Teach yourself gibberish! Read incomprehensible stories! Have fun!
 ---
 Copyright 2017 by Andrew Donald Kennedy
 
-From an idea by Dr. Aled Sage, VP of Engineering at Cloudsoft
+Licensed as CC-BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0/>
+
+From an idea by Dr. Aled Sage, showing how useful a PhD can be...
