@@ -7,7 +7,7 @@ actions = [
     "ate", "moved", "threw", "copied", "lifted", "found", "missed", "opened", "closed", "sat on", "drove", "saw",
     "used", "pushed", "cleaned", "fought", "listened to", "dropped", "lost", "made", "took", "wanted", "explained",
     "broke", "followed", "counted", "tied up", "unlocked", "painted", "pointed at", "saved", "removed", "spent",
-    "calculated", "wrote", "avoided", "went through", "sold", "connected", "flew over", "climbed", "detected" ]
+    "calculated", "wrote", "avoided", "went through", "sold", "connected", "flew over", "climbed", "detected", "is" ]
 joining = [
     "the", "my", "our", "their", "this" ]
 descriptions = [
@@ -37,6 +37,7 @@ if random.random() > 0.75:
 elif random.random() > 0.67:
     description = "very " + description
 
+if person == "I" and action == "is": action = "am"
 if person == "Who": end = "?"
 elif random.random() > 0.9: end = "!"
 else: end = "."
