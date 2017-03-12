@@ -30,4 +30,8 @@ if random.random() > 0.667:
 elif random.random() > 0.5:
     description = "very " + description
 
-print "{} {} {} {} {}".format(person, action, join, description, thing)
+if  person == "Who": end = "?"
+elif random.random() > 0.9: end = "!"
+else: end = "."
+
+print "{} {} {} {} {}{}".format(person, action, join, description, thing, end)
