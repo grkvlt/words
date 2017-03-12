@@ -39,7 +39,8 @@ elif random.random() > 0.67:
 
 if person == "I" and action == "is": action = "am"
 if person == "Who": end = "?"
-elif random.random() > 0.9: end = "!"
+elif random.random() > 0.90: end = "!"
 else: end = "."
+if random.random() > 0.95: end = ", in space!"
 
 print "{} {} {} {} {}{}".format(person, action, join, description, thing, end)
