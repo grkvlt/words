@@ -2,7 +2,8 @@ import random, string
 
 sounds = [
     "zaa", "goo", "fon", "min", "qua", "zok", "ble", "gon", "moo", "kip",
-    "gum", "plo", "gip", "dra", "foo", "bin", "zip", "cot", "laa", "arr" ]
+    "gum", "plo", "gip", "dra", "foo", "bin", "zip", "cot", "laa", "arr",
+    "eep", "orm", "tow", "hah" ]
 
 def choose(sounds):
     i = random.randint(1, len(sounds)) - 1

@@ -11,13 +11,18 @@ do
         sed -e "s/^/    /g"
     say -v Daniel "${name}"
     echo
-    echo "${name}" |
+    orig=$(echo "/ ${name} /" |
         tr "a-z" "A-Z" |
         sed -e "s/\([A-Z][A-Z][A-Z]\)/\1-/g" |
-        sed -e "s/-$//" |
-        sed -e "s/-/ - /g" |
-        sed -e "s/^/        /g"
-    echo
+        sed -e "s/- \/$/ \//" |
+        sed -e "s/-/ - /g")
+    n=$(grep "^..........." /usr/share/dict/words | wc -l)
+    i=$((RANDOM % n))
+    word=$(grep "^..........." /usr/share/dict/words |
+        tail +${i} |
+        head -1 |
+        tr "A-Z" "a-z")
+    echo "        ${orig} (${word})"
     say -v Daniel --file-format=AIFF -o ${aiff} "${name}"
     play --no-show-progress "|sox ${aiff} -p speed 0.85 stretch 1.35" \
         chorus 0.8 0.8 60 0.5 0.5 6 -t
