@@ -3,19 +3,23 @@ while true
 do
     clear
     echo
-    tail -3 story.log
+    tail -6 story.log
     words=$(python words.py | tee -a story.log)
     echo
-    echo ${words} |
+    echo "${words}" |
         tr "a-z" "A-Z" |
         figlet -c -w $(tput cols)
-    voice=$((RANDOM % 5))
+    echo
+    voice=$(echo "${words}" |
+        cut -d\  -f1 |
+        md5sum |
+        cut -c1)
     case ${voice} in
-        0)  say -v Fiona ${words} ;;
-        1)  say -v Oliver ${words} ;;
-        2)  say -v Yuri ${words} ;;
-        3)  say -v Veena ${words} ;;
-        4)  say -v Daniel ${words} ;;
+        [12])  say -v Daniel ${words} ;;
+        [87])  say -v Fiona ${words} ;;
+        [a3])  say -v Oliver ${words} ;;
+        [0])  say -v Veena ${words} ;;
+        [6])  say -v Yuri ${words} ;;
     esac
-    sleep 5
+    sleep 3
 done
