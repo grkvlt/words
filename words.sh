@@ -22,7 +22,9 @@ do
         Katriona|Wyldstyle)
             say -v Veena ${words} ;;
         *)
-            say -v Yuri ${words} ;;
+            yuri=$(echo ${words} |
+                sed -E 's/ ((the)|(their)|(this)|(my)|(our)) / /g')
+            say -v Yuri ${yuri} ;;
     esac
     sleep 5
 done

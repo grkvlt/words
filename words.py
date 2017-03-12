@@ -19,7 +19,7 @@ things = [
     "biscuit", "tree", "pencil sharpener", "marmalade", "toast", "fish tank", "bicycle", "spanner", "door", "object",
     "dot", "LEGO man", "book", "cheese", "cat flap", "machinery", "space ship", "fairy cake", "apple", "pair of pants",
     "knife and fork", "kitten", "dodecahedron", "picture", "waterfall", "socks", "sellotape", "honey badger", "parcel",
-    "rules", "recipe", "house", "bit of string", "piece of wood", "steam engine", "box", "kettle", "beehive", "plant",
+    "rule", "recipe", "house", "bit of string", "plank of wood", "steam engine", "box", "kettle", "beehive", "pot plant",
     "pound coin", "equation", "fulcrum", "word", "dictionary", "person", "robotic dog", "clothes horse", "top hat" ]
 
 def choose(words):
