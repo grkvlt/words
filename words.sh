@@ -1,9 +1,11 @@
 #!/bin/bash
 while true
 do
-    words=$(python words.py | tee -a story.log)
     clear
-    echo; echo; echo
+    echo
+    tail -3 story.log
+    words=$(python words.py | tee -a story.log)
+    echo
     echo ${words} |
         tr "a-z" "A-Z" |
         figlet -c -w $(tput cols)
