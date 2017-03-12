@@ -4,8 +4,9 @@ sounds = [
     "zaa", "goo", "fon", "min", "qua", "zok", "ble", "gon", "moo", "kip",
     "gum", "plo", "gip", "dra", "foo", "bin", "zip", "cot", "laa", "arr" ]
 
-def choose(words):
-    return words[int(random.random() * len(words))]
+def choose(sounds):
+    i = random.randint(1, len(sounds)) - 1
+    return sounds[i]
 
 def name(n):
     name = ""
@@ -13,4 +14,4 @@ def name(n):
         name += choose(sounds)
     return name
 
-print name(5)
+print name(random.randint(3, 6))
