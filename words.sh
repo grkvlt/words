@@ -10,16 +10,19 @@ do
         tr "a-z" "A-Z" |
         figlet -c -w $(tput cols)
     echo
-    voice=$(echo "${words}" |
-        cut -d\  -f1 |
-        md5sum |
-        cut -c1)
-    case ${voice} in
-        [12])  say -v Daniel ${words} ;;
-        [87])  say -v Fiona ${words} ;;
-        [a3])  say -v Oliver ${words} ;;
-        [0])  say -v Veena ${words} ;;
-        [6])  say -v Yuri ${words} ;;
+    person=$(echo "${words}" |
+        cut -d\  -f1)
+    case ${person} in
+        Ian|Ben|Biggles)
+            say -v Daniel ${words} ;;
+        Mum|Granny)
+            say -v Fiona ${words} ;;
+        Andrew|Dad)
+            say -v Oliver ${words} ;;
+        Katriona|Wyldstyle)
+            say -v Veena ${words} ;;
+        *)
+            say -v Yuri ${words} ;;
     esac
     sleep 5
 done
