@@ -9,6 +9,7 @@ do
     echo ${name} |
         figlet -w $(tput cols) |
         sed -e "s/^/    /g"
+    sleep 1
     say -v Daniel "${name}"
     echo
     orig=$(echo "/ ${name} /" |
@@ -26,7 +27,7 @@ do
     say -v Daniel --file-format=AIFF -o ${aiff} "${name}"
     play --no-show-progress "|sox ${aiff} -p speed 0.85 stretch 1.35" \
         chorus 0.8 0.8 60 0.5 0.5 6 -t
-    sleep 1
+    sleep 2
     say -v Daniel "${name}"
-    sleep 3
+    sleep 4
 done

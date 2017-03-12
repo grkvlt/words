@@ -21,5 +21,5 @@ do
         [0])  say -v Veena ${words} ;;
         [6])  say -v Yuri ${words} ;;
     esac
-    sleep 3
+    sleep 5
 done
