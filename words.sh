@@ -2,29 +2,25 @@
 while true
 do
     clear
-    echo
-    tail -6 story.log
-    words=$(python words.py | tee -a story.log)
-    echo
-    echo "${words}" |
-        tr "a-z" "A-Z" |
-        figlet -c -w $(tput cols)
-    echo
-    person=$(echo "${words}" |
-        cut -d\  -f1)
+    echo ; tail -6 story.log | cut -d: -f2 ; echo
+    words=$(python words.py)
+    person=$(echo "${words}" | cut -d\  -f1)
     case ${person} in
         Ian|Ben|Biggles)
-            say -v Daniel ${words} ;;
+            voice="Daniel" ;;
         Mum|Granny)
-            say -v Fiona ${words} ;;
+            voice="Fiona" ;;
         Andrew|Dad)
-            say -v Oliver ${words} ;;
+            voice="Oliver" ;;
         Katriona|Wyldstyle)
-            say -v Veena ${words} ;;
+            voice="Veena" ;;
         *)
-            yuri=$(echo ${words} |
-                sed -E 's/ ((the)|(their)|(this)|(my)|(our)) / /g')
-            say -v Yuri ${yuri} ;;
+            words=$(echo "${words}" | sed -E 's/ ((the)|(their)|(this)|(my)|(our)) / /g')
+            voice="Yuri" ;;
     esac
+    echo "${words}" | tr "a-z" "A-Z" | figlet -c -w $(tput cols)
+    echo
+    echo "${voice}: ${words}" >> story.log
+    say -v ${voice} "${words}"
     sleep 5
 done
