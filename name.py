@@ -1,4 +1,4 @@
-import random
+import random, string
 
 sounds = [
     "zaa", "goo", "fon", "min", "qua", "zok", "ble", "gon", "moo", "kip",
@@ -14,4 +14,5 @@ def name(n):
         name += choose(sounds)
     return name
 
-print name(random.randint(3, 6))
+name = name(random.randint(3, 6))
+print string.capwords(name)
